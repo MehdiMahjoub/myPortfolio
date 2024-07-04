@@ -27,6 +27,6 @@ const { error, pending, data } = await useFetch(
 )
 const repos = computed(
     () => data.value.filter(repo => repo.description)
-        .sort((a, b) => b.stargazers_count - a.stargazers_count)
+        .sort((a, b) => b.created_at - a.created_at)
 )
 </script>
