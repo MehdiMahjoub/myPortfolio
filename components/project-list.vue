@@ -11,7 +11,7 @@
                             <div class="font-semibold">{{ repository.name }}</div>
                         </div>
                         <p class="text-sm">
-                            {{ repository.name }}
+                            {{ repository.description }}
                         </p>
                     </a>
                 </li>
@@ -26,7 +26,7 @@ const { error, pending, data } = await useFetch(
     { lazy: true }
 )
 const repos = computed(
-    () => data.value.filter(repo => repo.name)
+    () => data.value.filter(repo => repo.description)
         .sort((a, b) => b.stargazers_count - a.stargazers_count)
 )
 </script>
